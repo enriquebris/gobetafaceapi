@@ -1,3 +1,5 @@
+[![godoc reference](https://img.shields.io/badge/godoc-reference-blue.svg)](https://godoc.org/github.com/enriquebris/gobetafaceapi) [![Go Report Card](https://goreportcard.com/badge/github.com/enriquebris/gobetafaceapi)](https://goreportcard.com/report/github.com/enriquebris/gobetafaceapi) [![Build Status](https://travis-ci.org/enriquebris/gobetafaceapi.svg?branch=master)](https://travis-ci.org/enriquebris/gobetafaceapi) [![codecov](https://codecov.io/gh/enriquebris/gobetafaceapi/branch/master/graph/badge.svg)](https://codecov.io/gh/enriquebris/gobetafaceapi)
+
 # GOlang Betaface API client
 
 ### What is Betaface API?
