@@ -20,7 +20,7 @@ go get github.com/enriquebris/gobetafaceapi
 
 ### Examples
 
-##### Upload a new image and get all information related to: faces, faces attributes, faces recongnition
+##### Upload a new image and get information related to: faces, faces attributes, faces recognition, ethnicity, age, gender
 ```go
 package main
 
