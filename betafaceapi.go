@@ -89,10 +89,15 @@ func (st *BasicClient) setGetMediaEndpointURL(url string) {
 	st.getMediaURL = url
 }
 
+// getGetMediaEndpointURL returns the GetMedia final endpoint URL (based on the given parameters: apiKey and mediaUUID)
+func (st *BasicClient) getGetMediaEndpointURL(apiKey string, mediaUUID string) string {
+	return fmt.Sprintf(st.getMediaURL, apiKey, mediaUUID)
+}
+
 // GetMedia gets and returns media information
-// Possible responses:
-//	200 ==> the media resource was successfully retrieved. Media data comes into *MediaResponse
-//	400 ==> bad request
+// Possible responses (HTTP status code):
+//	200 ==> the media resource was successfully retrieved. Media data comes into *Media
+//	400 ==> bad request (invalid mediaUUID). Only gohttpclient.HTTPResponse contains data, no media data or error is provided.
 //	404 ==> the media does not exist
 //	500 ==> server error. Error info comes into ErrorResponse
 //	For all above cases, the HTTP response comes into HTTPResponse
@@ -110,7 +115,7 @@ func (st *BasicClient) GetMedia(mediaUUID string) (gohttpclient.HTTPResponse, *M
 	}
 
 	// querystring
-	url := fmt.Sprintf(GetMediaEndpoint, st.apiKey, mediaUUID)
+	url := st.getGetMediaEndpointURL(st.apiKey, mediaUUID)
 
 	// build the http request
 	st.getHTTPClient().Reset()
